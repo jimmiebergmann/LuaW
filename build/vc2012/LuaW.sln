@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaW", "LuaW.vcxproj", "{3A22AC74-0400-4355-B3CF-A122D4AD9AB6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Settings", "Settings.vcxproj", "{D9A05612-4FE6-427A-8419-A7D81A7A1765}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3A22AC74-0400-4355-B3CF-A122D4AD9AB6} = {3A22AC74-0400-4355-B3CF-A122D4AD9AB6}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
