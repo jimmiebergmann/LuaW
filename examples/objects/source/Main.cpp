@@ -23,38 +23,16 @@
 // ///////////////////////////////////////////////////////////////////////////
 
 #include <LuaW.hpp>
+#include <Object.hpp>
 #include <iostream>
+#include <vector>
 
-static const std::string g_ScriptPath = "../script/Functions.lua";
-
-int SumFunction( lua_State * p_pState )
-{
-	// Pass the state to a new lua class
-	LuaW::Script Lua( p_pState );
-
-	// Get the paramters
-	int StackSize = Lua.GetStackSize( );
-	int Sum = 0;
-
-	for( int i = 0; i < StackSize; i++ )
-	{
-		Sum += Lua.PopInteger( );
-	}
-
-	// Push the result to the lua stack(makes it into a return value for the lua function)
-	Lua.PushInteger( Sum );
-
-	// return the number of return values
-	return 1; 
-}
+static const std::string g_ScriptPath = "../script/Objects.lua";
+static std::vector<Object*> g_Objects;
 
 int main( )
 {
 	LuaW::Script Lua;
-
-	// First function example
-	// Register function for Lua
-	Lua.RegisterFunction( "Sum", SumFunction );
 
 	// Run the Lua file
 	if( Lua.RunFile( g_ScriptPath.c_str( ) ) != LuaW::ERROR_NONE )
@@ -63,16 +41,6 @@ int main( )
 		std::cin.get( );
 		return 0;
 	}
-
-	// Another function example
-	// Call Lua function
-	const int Paramter = 15;
-	Lua.PushGlobal( "Foo" );
-	Lua.PushInteger( Paramter ); // Pass paramter to lua function
-	
-	Lua.Call( 1, 1 ); // call the function with 1 argument and 1 return value
-	const int Result = Lua.PopInteger( ); // Should be 2 * 15 = 30
-	std::cout << "(C)   Result from Foo( " << Paramter << " ): " << Result << std::endl;
 	
 	// Unload Lua
 	Lua.Unload( );

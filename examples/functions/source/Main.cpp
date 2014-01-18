@@ -29,9 +29,9 @@ static const std::string g_ScriptPath = "../script/Settings.lua";
 
 int main( )
 {
-	// Create and run the script
 	LuaW::Script Lua;
 
+	// Run the Lua file
 	if( Lua.RunFile( g_ScriptPath.c_str( ) ) != LuaW::ERROR_NONE )
 	{
 		std::cout << "[Error]: " << Lua.GetLastError( ) << std::endl;
