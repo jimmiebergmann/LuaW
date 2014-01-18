@@ -10,13 +10,10 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\examples\functions\source\Main.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D9A05612-4FE6-427A-8419-A7D81A7A1765}</ProjectGuid>
+    <ProjectGuid>{E152696F-3F21-48E5-B1BB-FFE02511FF22}</ProjectGuid>
     <RootNamespace>LuaW</RootNamespace>
-    <ProjectName>Settings</ProjectName>
+    <ProjectName>Functions</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -44,15 +41,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)..\..\bin</OutDir>
-    <IntDir>$(SolutionDir)..\..\obj\Functions\Debug</IntDir>
+    <IntDir>$(SolutionDir)..\..\obj\Settings\Debug</IntDir>
     <TargetName>$(ProjectName)-d</TargetName>
-    <IncludePath>..\..\include;..\..\extlibs\Lua5.2\include;..\..\examples\functions\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\include;..\..\extlibs\Lua5.2\include;..\..\examples\settings\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib;..\..\extlibs\Lua5.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)..\..\bin</OutDir>
-    <IntDir>$(SolutionDir)..\..\obj\Functions\Release</IntDir>
-    <IncludePath>..\..\include;..\..\extlibs\Lua5.2\include;..\..\examples\functions\include;$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)..\..\obj\Settings\Release</IntDir>
+    <IncludePath>..\..\include;..\..\extlibs\Lua5.2\include;..\..\examples\settings\include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\lib;..\..\extlibs\Lua5.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -82,6 +79,9 @@
       <AdditionalDependencies>lua52.lib;LuaW-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\examples\settings\source\Main.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
