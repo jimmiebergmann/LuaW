@@ -1,0 +1,23 @@
+# Directories #
+obj/**/*
+lib/**/*
+bin/**/*
+
+# Compiled #
+*.obj
+*.exe
+
+# Build #
+*.exp
+*.ncb
+*.suo
+*.user
+*.pdb
+*.sdf
+*.opensdf
+*.layout
+*.depend
+*.filters
+
+# Files #
+build/vc2012/Temp.vcxproj

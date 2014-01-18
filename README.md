@@ -1,4 +1,4 @@
 LuaW
 ====
 
-Lua Wrapper in C++
+Lua 5.2 Wrapper in C++
